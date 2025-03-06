@@ -88,7 +88,9 @@ if __name__ == "__main__":
 
     # Display relevant resumes and their scores
     print("\nTop Relevant Resumes:")
-    for idx, score in zip(relevant_resumes.index, relevant_scores):
+print("\nTop Relevant Resumes (Score > 0.0):")
+for idx, score in zip(relevant_resumes.index, relevant_scores):
+    if score > 0.0:  # Check if the score is greater than 0.0
         print(f"Resume Path: {data['resume_path'][idx]}, Score: {score}")
 
     # Optional: Save the TF-IDF vectorizer and model (if needed for later use)
